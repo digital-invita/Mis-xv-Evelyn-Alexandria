@@ -178,7 +178,7 @@ font-family: 'Playfair Display', serif;
   opacity: 0;
   transform: translateY(40px);
   filter: blur(6px);
-
+white-space: nowrap;
 
 }
 
@@ -1000,20 +1000,28 @@ border-bottom: 7px solid transparent;
 .marca-cta {
   display: inline-block;
   margin-top: 12px;
-  padding: 10px 24px;
+  padding: 12px 28px;
   border-radius: 40px;
   text-decoration: none;
   font-size: 14px;
-  background: linear-gradient(135deg, #7b1e3a, #a8325e);
-  color: white;
-  transition: 0.3s ease;
-  box-shadow: 0 8px 20px rgba(123, 30, 58, 0.35);
+  color: #ffffff;
+
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
 }
 
 .marca-cta:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 25px rgba(123, 30, 58, 0.45);
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
 }
+
 /* Texto superior */
 .marca-footer {
   position: relative;
