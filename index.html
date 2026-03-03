@@ -2505,6 +2505,8 @@ function addToCalendar() {
     const icsContent =
 `BEGIN:VCALENDAR
 VERSION:2.0
+PRODID:-//DigitalInvita//ES
+CALSCALE:GREGORIAN
 BEGIN:VEVENT
 DTSTART:${formatICS(startDate)}
 DTEND:${formatICS(endDate)}
@@ -2514,15 +2516,8 @@ LOCATION:${lugar}
 END:VEVENT
 END:VCALENDAR`;
 
-    const blob = new Blob([icsContent], { type: "text/calendar" });
-    const url = URL.createObjectURL(blob);
-
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = "evento.ics";
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
+    const url = "data:text/calendar;charset=utf8," + encodeURIComponent(icsContent);
+    window.location.href = url;
 
   } else {
     const start = startDate.toISOString().replace(/[-:]/g, "").split(".")[0];
